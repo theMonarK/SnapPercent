@@ -45,11 +45,6 @@ import java.util.Set;
  */
 public class GraphicOverlay extends View {
     private final Object mLock = new Object();
-    private int mPreviewWidth;
-    private float mWidthScaleFactor = 1.0f;
-    private int mPreviewHeight;
-    private float mHeightScaleFactor = 1.0f;
-    private int mFacing = CameraSource.CAMERA_FACING_BACK;
     private Set<Graphic> mGraphics = new HashSet<>();
 
     /**
@@ -83,27 +78,21 @@ public class GraphicOverlay extends View {
          * scale.
          */
         public float scaleX(float horizontal) {
-            return horizontal * mOverlay.mWidthScaleFactor;
+            return horizontal;
         }
 
         /**
          * Adjusts a vertical value of the supplied value from the preview scale to the view scale.
          */
         public float scaleY(float vertical) {
-            return vertical * mOverlay.mHeightScaleFactor;
+            return vertical;
         }
 
         /**
          * Adjusts the x coordinate from the preview's coordinate system to the view coordinate
          * system.
          */
-        public float translateX(float x) {
-            if (mOverlay.mFacing == CameraSource.CAMERA_FACING_FRONT) {
-                return mOverlay.getWidth() - scaleX(x);
-            } else {
-                return scaleX(x);
-            }
-        }
+        public float translateX(float x) { return scaleX(x); }
 
         /**
          * Adjusts the y coordinate from the preview's coordinate system to the view coordinate
@@ -153,19 +142,6 @@ public class GraphicOverlay extends View {
     }
 
     /**
-     * Sets the camera attributes for size and facing direction, which informs how to transform
-     * image coordinates later.
-     */
-    public void setCameraInfo(int previewWidth, int previewHeight, int facing) {
-        synchronized (mLock) {
-            mPreviewWidth = previewWidth;
-            mPreviewHeight = previewHeight;
-            mFacing = facing;
-        }
-        postInvalidate();
-    }
-
-    /**
      * Draws the overlay with its associated graphic objects.
      */
     @Override
@@ -173,10 +149,6 @@ public class GraphicOverlay extends View {
         super.onDraw(canvas);
 
         synchronized (mLock) {
-            if ((mPreviewWidth != 0) && (mPreviewHeight != 0)) {
-                mWidthScaleFactor = (float) canvas.getWidth() / (float) mPreviewWidth;
-                mHeightScaleFactor = (float) canvas.getHeight() / (float) mPreviewHeight;
-            }
 
             for (Graphic graphic : mGraphics) {
                 graphic.draw(canvas);

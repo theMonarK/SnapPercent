@@ -57,9 +57,9 @@ public class PhotoHandler implements PictureCallback {
         pictureFile = new File(path);
 
         try {
-            FileOutputStream output = new FileOutputStream(path);
-            picture.compress(Bitmap.CompressFormat.PNG, 100, output);
-            output.close();
+            FileOutputStream fos = new FileOutputStream(pictureFile);
+            fos.write(data);
+            fos.close();
             Toast.makeText(context, "New Image saved:" + path,
                     Toast.LENGTH_LONG).show();
         } catch (Exception error) {
