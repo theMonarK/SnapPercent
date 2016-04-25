@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SnaPercent</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="closeapp">Close App</string>
+    <string name="takepicture">Take Picture</string>
+    <string name="send">Send</string>
+    <string name="percent">Percent</string>
+    <string name="reverse_camera">Reverse Camera</string>
+    <string name="close">Close</string>
+    <string name="download">Download</string>
+</resources>

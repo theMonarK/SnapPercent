@@ -1,0 +1,77 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/camera_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <ImageButton
+        android:layout_width="59dp"
+        android:layout_height="50dp"
+        android:id="@+id/imgTakePicture"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="@android:drawable/ic_menu_camera"
+        android:visibility="visible"
+        android:contentDescription="@string/takepicture" />
+
+    <ImageButton
+        android:layout_width="58dp"
+        android:layout_height="48dp"
+        android:id="@+id/imgSend"
+        android:layout_gravity="right|bottom"
+        android:background="@android:drawable/ic_menu_send"
+        android:visibility="invisible"
+        android:contentDescription="@string/send" />
+
+    <ImageButton
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:id="@+id/OtherCamera"
+        android:layout_gravity="right|top"
+        android:background="@android:drawable/ic_menu_revert"
+        android:contentDescription="@string/reverse_camera"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgPercent"
+        android:layout_gravity="top|left"
+        android:background="@android:drawable/ic_delete"
+        android:padding="20dp"
+        android:contentDescription="@string/percent"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:id="@+id/imgClose"
+        android:layout_gravity="right|top"
+        android:background="@android:drawable/ic_menu_close_clear_cancel"
+        android:contentDescription="@string/close"
+        android:visibility="invisible" />
+
+    <ImageButton
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:id="@+id/imgDownload"
+        android:layout_gravity="left|bottom"
+        android:background="@android:drawable/stat_sys_download_done"
+        android:contentDescription="@string/download" />
+
+    <ImageButton
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:id="@+id/imgFilter"
+        android:layout_gravity="right|center_vertical"
+        android:contentDescription=""
+        android:background="@android:drawable/ic_menu_crop" />
+
+</FrameLayout>
