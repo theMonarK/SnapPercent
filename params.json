@@ -1,0 +1,6 @@
+{
+  "name": "SnapPercent",
+  "tagline": "",
+  "body": "# SnapPercent\r\n\r\nSnapPercent is a personal Snapchat for Android.\r\n\r\nI use Google API for Android : FaceDetector to recognize faces.\r\n\r\n## Features:\r\n\r\n* You can switch front & back cameras\r\n* Take a picture\r\n* Apply a filter\r\n* Download the picture\r\n* Delete the picture\r\n* Send the picture\r\n\r\n## Face Tracker\r\n```\r\n Factory for creating a face tracker to be associated with a new face.\r\n The multiprocessor creates face trackers as needed -- one for each individual.\r\n ```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
